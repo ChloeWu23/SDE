@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ic.doc.camera.CameraTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-02-07T17:02:32" hostname="dyn3226-191.wlan.ic.ac.uk" time="0.043">
+  <properties/>
+  <testcase name="pressingShutterWhenPowerOnCopyDataToMemoryCard" classname="ic.doc.camera.CameraTest" time="0.029"/>
+  <testcase name="switchingTheCameraOffPowersDownTheSensor" classname="ic.doc.camera.CameraTest" time="0.002"/>
+  <testcase name="cameraPowersDownSensorOnceWriteComplete" classname="ic.doc.camera.CameraTest" time="0.002"/>
+  <testcase name="pressingShutterWhenPowerOffDoNoting" classname="ic.doc.camera.CameraTest" time="0.001"/>
+  <testcase name="switchingTheCameraOnPowersUpTheSensor" classname="ic.doc.camera.CameraTest" time="0.001"/>
+  <testcase name="switchingCameraOfNotPowerDownSensorWhenWritting" classname="ic.doc.camera.CameraTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
