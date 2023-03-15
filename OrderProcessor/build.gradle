@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+group = 'uk.ac.ic.doc'
+version = '1.0.0'
+
+description = """Fragility Example"""
+
+sourceCompatibility = 1.10
+targetCompatibility = 1.10
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
