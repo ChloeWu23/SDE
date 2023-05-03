@@ -14,14 +14,25 @@ import static ic.doc.movies.Certification.PARENTAL_GUIDANCE;
 import static ic.doc.movies.Certification.TWELVE_A;
 import static java.util.Collections.EMPTY_LIST;
 
-public class MediaLibrary {
+public class MediaLibrary implements Library{
 
     // This code is simplified for the purposes of the exam - you can imagine in real life
     // this class would be much bigger and more sophisticated, with much more data.
 
-    private final List<Movie> topMovies;
+    private final List<Movie> topMovies ;
+    private static MediaLibrary instance;
 
-    public MediaLibrary() {
+     //singleton pattern to prevent more than one instance of this class created
+    //lazy initializer
+    public static synchronized MediaLibrary getInstance(){
+        if(instance == null){
+            instance= new MediaLibrary();
+        }
+       return instance;
+    }
+
+    //constructor
+    private MediaLibrary() {
         topMovies = List.of(
                 new Movie("Jurassic Park",
                         "A pragmatic paleontologist touring an almost complete theme park on an " +
