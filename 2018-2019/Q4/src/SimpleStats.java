@@ -4,6 +4,53 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import java.awt.Panel;
+import java.awt.event.ActionEvent; import java.awt.event.ActionListener; import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+public class SimpleStats implements Updatable{
+    JFrame frame = new JFrame("Simple Stats");
+    Panel panel = new Panel();
+    Model model = new Model();
+    JTextField currentMax = new JTextField(11);
+    JTextField currentMean = new JTextField(11);
+    private void display() {
+        frame.setSize(250, 350);
+        panel.add(new JLabel("Max: value "));
+        panel.add(currentMax);
+        panel.add(new JLabel("Mean: value "));
+        panel.add(currentMean);
+        model.addObserver(this);
+        for (int i = 1; i <= 12; i++) {
+            final int n = i;
+            JButton button = new JButton(String.valueOf(i));
+      button.addActionListener(
+          new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              model.pressButton(n);
+            }
+          });
+            panel.add(button);
+        }
+        frame.getContentPane().add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true); }
+    public static void main(String[] args) {
+        new SimpleStats().display(); }
+
+    @Override
+    public void update(int num, double mean) {
+        currentMax.setText(String.valueOf(num));
+        currentMean.setText(String.valueOf(mean));
+
+    }
+}
+/*
 public class SimpleStats implements Updatable {
     private JTextField currentMax;
     private JTextField currentMean;

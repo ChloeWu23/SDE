@@ -1,9 +1,23 @@
 package Q1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+public class FormattedList {
+    private final List<String> content = new ArrayList<>();
+    private ListStyle listStyle;
 
+    public FormattedList(ListStyle listStyle, String... items) {
+        this.listStyle = listStyle;
+        content.addAll(Arrays.asList(items)); }
+    public void add(String item) {
+        content.add(item); }
+    public void print() { System.out.println(listStyle.formatHeader()); for (String item : content) {
+        System.out.println(listStyle.formatItem(item)); }
+        System.out.println(listStyle.formatFooter()); }
+
+}
+
+/*
 public class FormattedList {
     private final List<String> content = new ArrayList<>();
     private ListStyle list;
